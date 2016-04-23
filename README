@@ -1,0 +1,7 @@
+
+--How to build docker
+
+docker build --rm -t ccc/jira:7.0.4 .
+
+--How to run
+docker run --name jira -d --add-host mysqlserver:192.168.1.10 -v /srv/jira/data:/var/atlassian/application-data/jira:rw -v /srv/jira/logs:/opt/atlassian/jira/logs/:rw -p 8080:8080 ccc/jira:7.0.4 
